@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pongprad Farim (Boss) - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Kanit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Kanit', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#060B19',
+                            800: '#0B132B',
+                            700: '#111D3A',
+                            600: '#1C2A4F',
+                        },
+                        cyan: {
+                            accent: '#00F2FE',
+                            glow: '#38BDF8',
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(0, 242, 254, 0.25)',
+                        'neon-strong': '0 0 30px rgba(0, 242, 254, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Glassmorphism Background Card */
+        .glass-card {
+            background: rgba(17, 29, 58, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+        /* Custom Glowing Pulse Effect */
+        @keyframes radar-pulse {
+            0% { transform: scale(0.8); opacity: 0.8; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+        .radar-ring {
+            animation: radar-pulse 3s infinite ease-out;
+        }
+        .radar-delay-1 { animation-delay: 1s; }
+        .radar-delay-2 { animation-delay: 2s; }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-200 font-sans antialiased selection:bg-cyan-500 selection:text-navy-900">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-navy-900/80 backdrop-blur-md border-b border-slate-800/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-wider text-white hover:text-cyan-accent transition-colors flex items-center gap-2">
+                <span class="text-cyan-accent font-extrabold">&lt;/&gt;</span> BOSS
+            </a>
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-cyan-accent transition-colors">เกี่ยวกับฉัน</a>
+                <a href="#skills" class="hover:text-cyan-accent transition-colors">ทักษะ</a>
+                <a href="#interests" class="hover:text-cyan-accent transition-colors">สิ่งที่สนใจ</a>
+                <a href="#learning" class="hover:text-cyan-accent transition-colors">เส้นทางการเรียนรู้</a>
+                <a href="#goals" class="hover:text-cyan-accent transition-colors">เป้าหมาย</a>
+                <a href="#contact" class="hover:text-cyan-accent transition-colors">ติดต่อ</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-navy-800/95 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-cyan-accent">เกี่ยวกับฉัน</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-cyan-accent">ทักษะ</a>
+            <a href="#interests" class="block py-2 text-slate-300 hover:text-cyan-accent">สิ่งที่สนใจ</a>
+            <a href="#learning" class="block py-2 text-slate-300 hover:text-cyan-accent">เส้นทางการเรียนรู้</a>
+            <a href="#goals" class="block py-2 text-slate-300 hover:text-cyan-accent">เป้าหมาย</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-cyan-accent">ติดต่อ</a>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-24 pb-16 space-y-24">
+
+        <!-- Hero Section -->
+        <section class="text-center space-y-6 pt-8">
+            <p class="text-cyan-glow font-medium tracking-wide text-sm sm:text-base">ยินดีต้อนรับเข้าสู่เว็บไซต์ส่วนตัวของผม</p>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+                สวัสดีครับ <span class="bg-gradient-to-r from-cyan-accent to-blue-500 bg-clip-text text-transparent">ผมชื่อบอส</span>
+            </h1>
+
+            <p class="text-xs sm:text-sm font-semibold tracking-widest text-slate-400 uppercase">
+                HELLO, I'M BOSS | <span class="text-slate-300">นักศึกษาสาขาคอมพิวเตอร์ (Computing Student)</span>
+            </p>
+
+            <p class="max-w-2xl mx-auto text-slate-300 leading-relaxed text-sm sm:text-base font-light">
+                สวัสดีครับ ผมชื่อบอส กำลังศึกษาอยู่ในมหาวิทยาลัยสงขลานครินทร์ สาขา Computing ผมสนใจเกี่ยวกับการเขียนโปรแกรม เทคโนโลยี และคอมพิวเตอร์ มีความตื่นเต้นที่จะเรียนรู้สิ่งใหม่ๆ และอยากพัฒนาทักษะตนเองให้ดียิ่งขึ้น
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+                <a href="#about" class="px-6 py-3 rounded-full bg-cyan-accent text-navy-900 font-semibold text-sm hover:bg-cyan-300 transition-all duration-300 shadow-neon hover:shadow-neon-strong">
+                    เกี่ยวกับฉัน (About Me)
+                </a>
+                <a href="#contact" class="px-6 py-3 rounded-full border border-slate-600 text-slate-200 font-medium text-sm hover:border-cyan-glow hover:text-cyan-glow transition-all duration-300 bg-navy-800/40">
+                    ติดต่อฉัน (My Contact)
+                </a>
+            </div>
+
+            <!-- Hero Visual Canvas / Icon Holder -->
+            <div class="pt-10 flex justify-center">
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 glass-card rounded-3xl flex items-center justify-center overflow-hidden border border-slate-700/50 shadow-2xl">
+                    <!-- Radar Ring Effect -->
+                    <div class="absolute w-32 h-32 border border-cyan-glow/30 rounded-full radar-ring"></div>
+                    <div class="absolute w-32 h-32 border border-cyan-glow/20 rounded-full radar-ring radar-delay-1"></div>
+                    <div class="absolute w-32 h-32 border border-cyan-glow/10 rounded-full radar-ring radar-delay-2"></div>
+
+                    <!-- Glowing Code Bracket Icon -->
+                    <div class="relative z-10 text-cyan-accent filter drop-shadow-[0_0_15px_rgba(0,242,254,0.6)]">
+                        <i data-lucide="code-2" class="w-20 h-20 sm:w-24 sm:h-24 stroke-[1.5]"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 01 / ABOUT ME SECTION -->
+        <section id="about" class="space-y-6 scroll-mt-24">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-cyan-glow uppercase">01 / ABOUT ME</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">เกี่ยวกับฉัน (About Me)</h2>
+                <p class="text-sm text-slate-400 mt-0.5">มาทำความรู้จักกับผม (Get to Know Me)</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+                <!-- Info Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="space-y-1">
+                        <p class="text-xs text-slate-400">ชื่อ-นามสกุล</p>
+                        <p class="text-base font-semibold text-white">Pongprad Farim</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-xs text-slate-400">ชื่อเล่น</p>
+                        <p class="text-base font-semibold text-white">บอส (Boss)</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-xs text-slate-400">อายุ</p>
+                        <p class="text-base font-semibold text-white">20 ปี</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-xs text-slate-400">มหาวิทยาลัย</p>
+                        <p class="text-base font-semibold text-white">มหาวิทยาลัยสงขลานครินทร์ (PSU)</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-xs text-slate-400">สาขาวิชา</p>
+                        <p class="text-base font-semibold text-white">Computing</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-xs text-slate-400">จังหวัด</p>
+                        <p class="text-base font-semibold text-white">ภูเก็ต</p>
+                    </div>
+                </div>
+
+                <hr class="border-slate-800">
+
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+                    ผมเป็นคนที่ชอบเรียนรู้สิ่งใหม่ๆ ตลอดเวลา ชอบคิดวิเคราะห์และแก้ปัญหาเกี่ยวกับการเขียนโปรแกรม สนใจเทคโนโลยีใหม่ๆ อยู่เสมอ และต้องการพัฒนาทักษะตนเองในด้านการเขียนโปรแกรมเพื่อนำไปใช้ประโยชน์ในการเรียนและการทำงานในอนาคต
+                </p>
+            </div>
+        </section>
+
+
+        <!-- 02 / MY SKILLS SECTION -->
+        <section id="skills" class="space-y-6 scroll-mt-24">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-cyan-glow uppercase">02 / MY SKILLS</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">ทักษะของฉัน (My Skills)</h2>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start gap-6 border-l-4 border-l-cyan-accent">
+                <div class="p-3 bg-navy-600/60 rounded-xl text-cyan-accent shrink-0 border border-slate-700">
+                    <i data-lucide="code" class="w-8 h-8"></i>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-lg font-semibold text-white">
+                        Basic Programming (พื้นฐานการเขียนโปรแกรม)
+                    </h3>
+                    <p class="text-sm text-slate-300 leading-relaxed font-light">
+                        ผมมีความรู้พื้นฐานเกี่ยวกับโปรแกรม C/C++ และ Python ได้เรียนรู้โครงสร้างข้อมูลเบื้องต้น การเขียนฟังก์ชั่น การจัดการเงื่อนไขและลูป และกำลังศึกษาเพิ่มเติมเพื่อพัฒนาทักษะให้ดียิ่งขึ้น
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 03 / MY INTERESTS SECTION -->
+        <section id="interests" class="space-y-6 scroll-mt-24">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-cyan-glow uppercase">03 / MY INTERESTS</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">สิ่งที่สนใจ (My Interests)</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Interest Card 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col hover:-translate-y-1 transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" 
+                             alt="Technology & Computers" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/0f172a/38bdf8?text=Technology'">
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <h3 class="text-base font-semibold text-white">
+                            คอมพิวเตอร์และเทคโนโลยี (Technology & Computers)
+                        </h3>
+                        <p class="text-xs text-slate-300 leading-relaxed font-light">
+                            สนใจเทคโนโลยีใหม่ๆ อุปกรณ์คอมพิวเตอร์ และนวัตกรรมที่เข้ามามีบทบาทในชีวิตประจำวัน
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Interest Card 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col hover:-translate-y-1 transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" 
+                             alt="Gaming" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/0f172a/38bdf8?text=Gaming'">
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <h3 class="text-base font-semibold text-white">
+                            เกม (Gaming)
+                        </h3>
+                        <p class="text-xs text-slate-300 leading-relaxed font-light">
+                            ชอบเล่นเกมเพื่อผ่อนคลายและฝึกทักษะการคิด วิเคราะห์ วางแผน และการทำงานร่วมกับผู้อื่น
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Interest Card 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col hover:-translate-y-1 transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=800&q=80" 
+                             alt="Basketball" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/0f172a/38bdf8?text=Basketball'">
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <h3 class="text-base font-semibold text-white">
+                            บาสเกตบอล (Basketball)
+                        </h3>
+                        <p class="text-xs text-slate-300 leading-relaxed font-light">
+                            ออกกำลังกาย เล่นบาสเกตบอล เพื่อเสริมสร้างสุขภาพร่างกายให้แข็งแรง และชอบเล่นเป็นทีม
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 04 / MY LEARNING JOURNEY SECTION -->
+        <section id="learning" class="space-y-6 scroll-mt-24">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-cyan-glow uppercase">04 / MY LEARNING JOURNEY</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">เส้นทางการเรียนรู้ (My Learning Journey)</h2>
+                <p class="text-sm text-slate-400 mt-0.5">เรียนรู้ พัฒนา และก้าวไปข้างหน้า (Always learning, Always improving)</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+                    การเรียนรู้ทางด้านคอมพิวเตอร์ทำให้ผมได้ฝึกคิดวิเคราะห์และแก้ปัญหาอย่างเป็นระบบ และสนใจเทคโนโลยีใหม่ๆ อยู่เสมอ เพื่อนำมาใช้ประโยชน์ในการเรียน การทำงาน และการพัฒนาทักษะตนเอง
+                </p>
+
+                <!-- Bullet Points List -->
+                <div class="space-y-3 pt-2">
+                    <div class="glass-card rounded-xl p-4 flex items-center gap-3 border border-slate-700/50 hover:border-cyan-glow/40 transition-colors">
+                        <div class="p-1.5 bg-cyan-glow/10 text-cyan-glow rounded-lg">
+                            <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-sm font-medium text-slate-200">พื้นฐานคอมพิวเตอร์และเทคโนโลยีสารสนเทศ</span>
+                    </div>
+
+                    <div class="glass-card rounded-xl p-4 flex items-center gap-3 border border-slate-700/50 hover:border-cyan-glow/40 transition-colors">
+                        <div class="p-1.5 bg-cyan-glow/10 text-cyan-glow rounded-lg">
+                            <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-sm font-medium text-slate-200">พื้นฐานการเขียนโปรแกรม</span>
+                    </div>
+
+                    <div class="glass-card rounded-xl p-4 flex items-center gap-3 border border-slate-700/50 hover:border-cyan-glow/40 transition-colors">
+                        <div class="p-1.5 bg-cyan-glow/10 text-cyan-glow rounded-lg">
+                            <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-sm font-medium text-slate-200">การพัฒนาดิจิทัลเว็บโซลูชัน</span>
+                    </div>
+
+                    <div class="glass-card rounded-xl p-4 flex items-center gap-3 border border-slate-700/50 hover:border-cyan-glow/40 transition-colors">
+                        <div class="p-1.5 bg-cyan-glow/10 text-cyan-glow rounded-lg">
+                            <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-sm font-medium text-slate-200">การเรียนรู้เทคโนโลยีใหม่ๆ</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 05 / MY GOALS SECTION -->
+        <section id="goals" class="space-y-6 scroll-mt-24">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-cyan-glow uppercase">05 / MY GOALS</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">เป้าหมายของฉัน (My Goals)</h2>
+                <p class="text-sm text-slate-400 mt-0.5">เป้าหมายในอนาคต (My Future Goals)</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+                    เป้าหมายของผมคือการพัฒนาทักษะการเขียนโปรแกรมและการพัฒนาซอฟต์แวร์ให้เชี่ยวชาญ สามารถนำความรู้และทักษะไปใช้ในการทำงานจริง สร้างสรรค์ผลงานที่เป็นประโยชน์ต่อสังคม และพร้อมเรียนรู้สิ่งใหม่ๆ เพื่อเติบโตในสายงานเทคโนโลยีอย่างยั่งยืน
+                </p>
+
+                <!-- Featured Image -->
+                <div class="rounded-xl overflow-hidden border border-slate-700/60 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Coding Laptop" 
+                         class="w-full h-64 sm:h-80 object-cover"
+                         onerror="this.src='https://placehold.co/800x400/0f172a/38bdf8?text=Coding+Goals'">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 06 / CONTACT SECTION -->
+        <section id="contact" class="space-y-6 scroll-mt-24">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-cyan-glow uppercase">06 / CONTACT</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">ติดต่อฉัน (Contact)</h2>
+            </div>
+
+            <!-- Email Link -->
+            <div class="glass-card rounded-2xl p-6 flex items-center justify-between hover:border-cyan-glow/50 transition-colors">
+                <div class="flex items-center gap-3">
+                    <div class="p-3 bg-cyan-glow/10 text-cyan-accent rounded-xl">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400">Gmail</p>
+                        <a href="mailto:pongprad15351@gmail.com" class="text-base sm:text-lg font-medium text-white hover:text-cyan-glow transition-colors">
+                            pongprad15351@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thank You Box -->
+            <div class="glass-card rounded-2xl p-8 sm:p-10 text-center space-y-3 border-cyan-glow/20 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-cyan-glow/5 to-transparent pointer-events-none"></div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white">
+                    ขอบคุณที่เข้ามาเยี่ยมชมเว็บไซต์ของผม
+                </h3>
+                <p class="text-xs sm:text-sm font-semibold tracking-wider text-cyan-glow uppercase">
+                    Thank you for visiting my website
+                </p>
+                <div class="w-16 h-0.5 bg-slate-700 mx-auto my-4"></div>
+                <p class="text-sm text-slate-300 font-light">
+                    หวังว่าจะได้รู้จักและร่วมงานกันในเร็วๆ นี้
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-navy-900 py-8 text-center text-xs text-slate-500 space-y-1">
+        <p class="font-medium text-slate-400">Boss • Pongprad Farim</p>
+        <p>Computing Student</p>
+    </footer>
+
+    <!-- JavaScript For Interactivity -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close Mobile Menu on Link Click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
